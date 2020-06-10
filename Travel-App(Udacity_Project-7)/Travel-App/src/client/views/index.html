@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta charset="UTF-8">
+    <meta name="description" content="Plan your journey.">
+    <meta name="keywords" content="travel app, journey">
+    <meta name="author" content="Vik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="page">
+        <nav>
+            <div id="nav_menu">
+                <div>Lost With Purpose </div>
+            </div>
+            <ul id="nav-menu">
+                <li class="nav-menu-item"><a href="#about_us">About us</a></li>
+                <li class="nav-menu-item"><a href="#plan_trip">Plan your trip</a></li>
+            </ul>
+        </nav>
+
+        <section id="about_us">
+            <div id="desc">
+                <h3>Tours & Travels</h3><br>
+                <h1>Amazing Place on Earth</h1><br>
+                <button id="plan_now">Plan now!</button>
+            </div>
+        </section>
+
+        <section id="plan_trip">
+            <div id="plan_your_trip">
+                <h1>Plan your trip</h1>
+                <form id="trip_details_form">
+                    <label for="travel_date"> Current Location </label>
+                    <input type="text" id="cur_place" name="from" placeholder="location" autocomplete="off" required>
+                    <label for="travel_date"> Destination/City </label>
+                    <input type="text" id="des_place" name="to" placeholder="destination" autocomplete="off" required>
+                    <label for="travel_date"> Departing on </label>
+                    <input type="date" id="travel_date" name="date" required>
+                    <input type="submit" name="submit" id="travel_details_submit" value="Submit">
+
+
+                </form>
+            </div>
+        </section>
+
+        <section class='hide_details' id="trip_details_section">
+            <div id="trip_details">
+                <div id="dest_photo">
+                    <img id="dest_desc_photo" src="../views/img/earth.svg" alt="destination image">
+                </div>
+                <div id="main_details">
+                    <div id="boarding_details">You are boarding from: <span class="dynamic_content"
+                            id="boarding"></span></div>
+                    <div id="destination_details">You are going to: <span class="dynamic_content"
+                            id="destination"></span></div>
+                    <div id="departure_details">Departing on: <span class="dynamic_content"
+                            id="departing_date">DD/MM/YYYY</span>
+                    </div>
+                    </div>
+                    <div id="days_to_go_details">Days to go <span class="dynamic_content" id="number_of_days">NUM</span>
+                    </div>
+                    <div id="temperature_details">Expect weather to be <span class="dynamic_content" id="temperature">
+                            &#8451;</span> , mostly
+                        <span class="dynamic_content" id="weather"></span>.</div>
+                    <div>
+                        <button class="button_style" id="remove_trip">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div id="footer">
+                Made by Vikrant
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
